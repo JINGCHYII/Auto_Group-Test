@@ -129,19 +129,19 @@
             <local:BindingProxy x:Key="Proxy" Data="{Binding}"/>
         </Grid.Resources>
         <Grid.ContextMenu>
-            <ContextMenu x:Name="contextmenu" Style="{StaticResource aaa}" ItemsSource="{local:Enumerate {x:Type local:UCType}}">
-                <!--<ContextMenu.ItemContainerStyle>
+            <ContextMenu x:Name="contextmenu" ItemsSource="{local:Enumerate {x:Type local:UCType}}">
+                <ContextMenu.ItemContainerStyle>
                     <Style TargetType="{x:Type MenuItem}">
                         <Setter Property="Padding" Value="-33,0,-63,0"/>
-                        --><!--<Setter Property="Command" Value="{Binding Source={StaticResource Proxy}, Path = Data.menuItemClickCommand}"/>-->
-                        <!--<Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}, Path=PlacementTarget.SelectedItem}"/>--><!--
+                        <!--<Setter Property="Command" Value="{Binding Source={StaticResource Proxy}, Path = Data.menuItemClickCommand}"/>
+                        <Setter Property="CommandParameter" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ContextMenu}, Path=PlacementTarget.SelectedItem}"/>-->
                     </Style>
                 </ContextMenu.ItemContainerStyle>
                 <ContextMenu.ItemTemplate>
                     <DataTemplate>
                         <MenuItem Header="{Binding}" Click="MenuItem_Click"/>
                     </DataTemplate>
-                </ContextMenu.ItemTemplate>-->
+                </ContextMenu.ItemTemplate>
             </ContextMenu>
         </Grid.ContextMenu>
 
@@ -185,7 +185,6 @@
                             <TextBlock Text="Start" IsHitTestVisible="False" Margin="5,4,5,75" Foreground="#FFD8D8D8"/>
                         </Grid>
                     </ContentControl>
-                    <local:MyListBox x:Name="UCListBox" Width="80" Height="120" Style="{DynamicResource ListBoxStyle1}" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" Canvas.Left="160" Canvas.Top="92" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
                 </Canvas>
             </Grid>
         </ScrollViewer>

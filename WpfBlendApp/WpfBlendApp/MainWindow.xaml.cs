@@ -137,21 +137,29 @@ namespace WpfBlendApp
 
             listContexts = new List<ListContext>()
             {
-                new ListContext("a",new List<ListContext>(){new ListContext("aa",new List<ListContext>() { new ListContext("aaaaa", null)}),new ListContext("aaa", new List<ListContext>() { new ListContext("aaaaaa", null) }) }),
+                new ListContext("a",new List<ListContext>()
+                {
+                    new ListContext("aa",
+                    new List<ListContext>()
+                    {
+                        new ListContext("aaaaa", null)
+                    }),
+                    new ListContext("aaa", 
+                    new List<ListContext>()
+                    {
+                        new ListContext("aaaaaa", null)
+                    })
+                }),
                 new ListContext("b",new List<ListContext>(){new ListContext("bb", new List<ListContext>() { new ListContext("bbbbb", null) }),new ListContext("bbb", new List<ListContext>() { new ListContext("bbbbbb", null) }) }),
                 new ListContext("c",new List<ListContext>(){new ListContext("cc", new List<ListContext>() { new ListContext("ccccc", null) }),new ListContext("ccc", new List<ListContext>() { new ListContext("cccccc", null) }) }),
             };           
 
-            UCListBox.AddLCs(listContexts);
-
-            contextmenu.DataContext = listContexts;
-
             //UCListBox.Items.Add(new MyListBoxItem(listContexts,0));
             //UCListBox.Items.Add(new MyListBoxItem(listContexts[0].LCs,1));
 
-            menuItemClickCommand = new RoutedUICommand();
-            CommandBinding menuCommandBinding = new CommandBinding(menuItemClickCommand, MenuItem_Click);
-            CommandManager.RegisterClassCommandBinding(typeof(MainWindow), menuCommandBinding);
+            //menuItemClickCommand = new RoutedUICommand();
+            //CommandBinding menuCommandBinding = new CommandBinding(menuItemClickCommand, MenuItem_Click);
+            //CommandManager.RegisterClassCommandBinding(typeof(MainWindow), menuCommandBinding);
 
             this.MouseUp += new MouseButtonEventHandler((s, e) =>
               {
