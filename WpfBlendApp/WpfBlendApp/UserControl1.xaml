@@ -9,6 +9,8 @@
 
     <Grid>
         <Rectangle x:Name="dragRec" Height="131.5" Stroke="{Binding BorderColor}" VerticalAlignment="Top" Width="89.1" RadiusY="4.996" RadiusX="4.996" Fill="#FF464646" Margin="0,4.25,0,0"/>
+
+        <TextBox Width="80" Height="40" Background="#FFBFBFBF"/>
         <ProgressBar x:Name="progressBar" Value="{Binding ProgressBarVal}" Minimum="0" Maximum="1" IsIndeterminate="False" Margin="5,114.5,5,10" Foreground="#FFDBE47F" Background="#FF959595" BorderBrush="{x:Null}" BorderThickness="0"/>
         <Ellipse x:Name="LG" Height="11" Margin="1.188,32.125,76.912,92.625" Stroke="Black" Width="11">
             <Ellipse.Style>
